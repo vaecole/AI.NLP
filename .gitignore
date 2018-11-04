@@ -102,3 +102,55 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+###############
+#    folder   #
+###############
+bin/
+obj/
+debug/
+release/
+Logs/
+TEMP/
+packages/
+
+
+###############
+#  fixed file #
+###############
+.gitignore
+*.exe
+*.lib
+*.dll
+*.obj
+*.db
+*.pdb
+*.suo
+*.msi
+*.user
+*.suo
+*.Cache
+
+###############
+#  temp file  #
+###############
+~*
+*.log
+*.cmm
+*.men
+*.ini
+*.fig
+*.cmp
+*.tmp
+*.cfs
+*.del
+UmbracoTraceLog.txt
+
+
+###############
+#    script   #
+###############
+*.bat
+*.licx
+

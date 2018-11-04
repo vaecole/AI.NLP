@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "AI.NLP", "AI.NLP\AI.NLP.Homeworks.pyproj", "{27D0A72C-FB1E-425B-9015-8F27F88514A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27D0A72C-FB1E-425B-9015-8F27F88514A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D0A72C-FB1E-425B-9015-8F27F88514A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5E8B89B-8AAF-40BD-895F-0BF178C03E1A}
+	EndGlobalSection
+EndGlobal

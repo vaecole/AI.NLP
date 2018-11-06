@@ -30,6 +30,10 @@
     <Content Include="1.2.dfs.py">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Jupyter\1.rule_and_search.ipynb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jupyter\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

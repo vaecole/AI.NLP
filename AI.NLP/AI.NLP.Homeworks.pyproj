@@ -5,7 +5,7 @@
     <ProjectGuid>27d0a72c-fb1e-425b-9015-8f27f88514a6</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>1.1.py</StartupFile>
+    <StartupFile>2.1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -13,6 +13,7 @@
     <Name>AI.NLP.Homeworks</Name>
     <RootNamespace>PythonApplication1</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,15 +26,23 @@
   <ItemGroup>
     <Compile Include="1.1.py" />
     <Compile Include="1.3.bfs.py" />
+    <Compile Include="2.1.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.2.dfs.py">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Jupyter\1.rule_and_search.ipynb" />
+    <Content Include="Jupyter\10k_articles.txt" />
+    <Content Include="Jupyter\2.1.ipynb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jupyter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.7" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

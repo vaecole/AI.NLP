@@ -30,6 +30,9 @@
     <Compile Include="lecture2\unigram.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="lecture3\subway_search.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,7 @@
     <Folder Include="lecture2\" />
     <Folder Include="Jupyter\" />
     <Folder Include="lecture1\" />
+    <Folder Include="lecture3\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.7" />

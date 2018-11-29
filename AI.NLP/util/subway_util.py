@@ -26,3 +26,34 @@ def build_subways():
     with open(file, encoding='utf-8') as f:
         subways = json.load(f)
     pprint(subways[0]['stops'][0])
+
+
+from collections import defaultdict
+
+
+def build_connected_lines(lines):
+    stops_conn = defaultdict(list)
+    for line in lines:
+        stops = line['stops']
+        i = 0
+        while i < (len(stops) - 1):
+            current = stops[i]['name']
+            next_ = stops[i + 1]['name']
+            if next_ not in stops_conn[current]:
+                stops_conn[current].append(next_)
+            if current not in stops_conn[next_]:
+                stops_conn[next_].append(current)
+            i += 1
+
+    return stops_conn
+
+
+def get_all_stops_coords(lines):
+    all_stops = {}
+    for line in lines:
+        stops = line['stops']
+        for stop in stops:
+            all_stops[stop['name']] = (stop['x'], stop['y'])
+    return all_stops
+
+

@@ -1,3 +1,3 @@
-from lecture2 import two_gram as tg
+from util import subway
 
-tg.get_2_gram_prob("中华名族伟大复兴")
+subway.build_subways()

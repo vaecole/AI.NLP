@@ -36,6 +36,9 @@
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="util\subway.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="lecture1\dfs.py">
@@ -50,6 +53,7 @@
     <Folder Include="Jupyter\" />
     <Folder Include="lecture1\" />
     <Folder Include="lecture3\" />
+    <Folder Include="util\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.7" />

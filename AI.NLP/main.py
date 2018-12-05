@@ -1,11 +1,8 @@
-from lecture3 import subway_search
-from util import subway_util
-import json
+from lecture4 import edit_distance
+from lecture4 import rob_cutting
 
-with open('subways_bj_degree.json',encoding='utf-8') as f:
-    subway_lines = json.load(f)
+print(rob_cutting.revenue_cache(20))
+print(rob_cutting.revenue_lru(20))
+print(rob_cutting.revenue_memo(20))
 
-stops_coords = subway_util.get_all_stops_coords(subway_lines)
-stops_conns = subway_util.build_connected_lines(subway_lines)
-
-print(' --> '.join(subway_search.search_destination(stops_conns, stops_coords ,'圆明园','国贸', subway_search.get_successors, subway_search.min_change)))
+print(edit_distance.get_edit_distance("little cutie", "a little cuty"))

@@ -154,3 +154,9 @@ UmbracoTraceLog.txt
 *.bat
 *.licx
 
+
+wiki*
+zhwiki*
+.vs/
+.idea
+subways_bj*

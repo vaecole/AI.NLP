@@ -160,3 +160,6 @@ zhwiki*
 .vs/
 .idea
 subways_bj*
+sqlResult*
+all_*.txt
+news*.txt

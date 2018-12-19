@@ -1,0 +1,15 @@
+## 安装LTP心得
+- 根据文档通过docker构建，Windows10，尝试N次都是卡在80%左右，长时间后报错终止，折腾两天后放弃
+- 根据文档的编译安装方法可以正常构建LTP Server:
+    - 首先在Windows 10中安装Linux子系统，一般安装Ubuntu版本即可（低版本Windows可能需要虚拟机来实现）
+    - 在Linux系统中，Clone官方LTP代码库：https://github.com/HIT-SCIR/ltp 到repos/ltp下
+    - 确保当前linux系统安装了gcc和g++编译器（若没有使用apt-get install gcc/g++分别安装）
+    - 在ltp文件夹下运行./comfigure（如果报错需要将文件打开改为linux文本格式，例如使用notepad++打开文件后，编辑->文档格式转换->linux格式，如果做不到这一点，则直接按照文件里面的命令执行1. mkdir build; 2. cmake -DCMAKE_BUILD_TYPE=Release .）
+    - 在ltp文件夹下执行make，等待片刻（我的机器4C 12G，等了20分钟左右）完成编译
+    - 最后在bin目录下生成了ltp_server
+- 运行ltp_server
+    - 首先需要下载ltp_data模型文件：http://ospm9rsnd.bkt.clouddn.com/model/ltp_data_v3.4.0.zip
+    - 解压到bin目录下，要直接解压到当前文件夹，即目录ltp_data下就是模型文件（注意，如果是Windows下的linux子系统，下载和解压需要在linux命令行中完成，否则linux不能识别文件）
+    - 在bin目录下运行./ltp_server --port 12345，可以在官网查阅相关文档：http://ltp.ai/docs/ltpserver.html
+- 测试ltp_server
+    - 使用linux命令测试：`curl -d "s=他点头表示同意我的意见。&f=xml&t=all" http://127.0.0.1:12345/ltp`

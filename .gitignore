@@ -158,6 +158,7 @@ UmbracoTraceLog.txt
 wiki*
 zhwiki*
 .vs/
+.vscode/
 .idea
 subways_bj*
 sqlResult*

@@ -2,8 +2,12 @@ import json
 
 import jieba
 import pandas as pd
+from sklearn import svm
+from sklearn import tree
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 
 
 def cut(content):
@@ -30,7 +34,7 @@ def get_top_corpus_source(n, filename='../data/sqlResult_1558435.csv', encoding=
 def tf_idf(data_set):
     vectorizer = TfidfVectorizer()
     vector = vectorizer.fit_transform(data_set[0])
-    return vector, data_set[1]
+    return vector.toarray(), data_set[1]
 
 
 def split_data_set(data_set, training_rate=0.7):
@@ -43,16 +47,31 @@ def split_data_set(data_set, training_rate=0.7):
     return train_x, train_y, test_x, test_y
 
 
-def train_by_lr(train_x, train_y):
-    lr = LinearRegression()
-    lr.fit(train_x, train_y)
-    return lr
-
-
-def train(method_func, train_x, train_y):
+def train(method_name, train_x, train_y):
+    method_func = {
+        'LogisticRegression': LogisticRegression(),
+        'KNeighborsClassifier': KNeighborsClassifier(),
+        'SVM': svm.SVC(),
+        'NaiveBayes': GaussianNB(),
+        'DecisionTree': tree.DecisionTreeClassifier()
+    }[method_name]
     method_func.fit(train_x, train_y)
     return method_func
 
 
-def predict(method_func, test_x):
-    return method_func.predict(test_x)
+def accuracy(t, p):
+    tpc = 0
+    for i in range(len(t)):
+        if t[i] == p[i]:
+            tpc = tpc + 1
+    return float(tpc / len(t))
+
+
+method_names = ['LogisticRegression', 'KNeighborsClassifier', 'SVM', 'NaiveBayes', 'DecisionTree']
+corpus_source = get_top_corpus_source(1000)
+ds = tf_idf(corpus_source)
+tt_data = split_data_set(ds)
+for method in method_names:
+    recognizer = train(method, tt_data[0], tt_data[1])
+    predict_rs = recognizer.predict(tt_data[2])
+    print(method + " accuracy:" + str(accuracy(tt_data[3], predict_rs)))

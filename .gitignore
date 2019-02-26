@@ -166,3 +166,5 @@ all_*.txt
 news.txt
 www.cmiw.cn*
 bbs.cmiw.cn/
+track_toxic_data/
+data/

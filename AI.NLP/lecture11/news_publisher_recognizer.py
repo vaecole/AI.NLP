@@ -66,9 +66,9 @@ def accuracy(t, p):
             tpc = tpc + 1
     return float(tpc / len(t))
 
-
-method_names = ['LogisticRegression', 'KNeighborsClassifier', 'SVM', 'NaiveBayes', 'DecisionTree']
-corpus_source = get_top_corpus_source(1000)
+# 'KNeighborsClassifier', need to much memory
+method_names = ['LogisticRegression',  'SVM', 'NaiveBayes', 'DecisionTree']
+corpus_source = get_top_corpus_source(10000)
 ds = tf_idf(corpus_source)
 tt_data = split_data_set(ds)
 for method in method_names:
